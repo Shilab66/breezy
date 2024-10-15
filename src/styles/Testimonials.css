@@ -1,0 +1,39 @@
+.testimonials {
+    padding: 40px 20px;
+    background-color: #01200F;
+    color: #9EC5AB;
+    text-align: center;
+  }
+  
+  .testimonials h2 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .quotes {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .quote-card {
+    background-color: #104F55;
+    border-radius: 20px;
+    padding: 20px;
+    width: 30%;
+    font-size: 1.1rem;
+    color: white;
+  }
+  
+  .quote-card p {
+    font-style: italic;
+  }
+  
+  @media (max-width: 768px) {
+    .quote-card {
+      width: 100%;
+    }
+  }
+  
