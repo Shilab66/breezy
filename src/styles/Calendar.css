@@ -1,0 +1,62 @@
+.calendar-container {
+    width: 100%; /* Make the calendar wider */
+    max-width: 900px; /* Limit the maximum width */
+    margin: 20px auto; /* Center the calendar */
+    background-color: transparent; /* Remove the white background */
+    padding: 20px;
+    border-radius: 15px;
+    position: relative; /* To position the popup below the calendar */
+    height: 200px; /* Fixed height for the calendar */
+}
+
+.selectors {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+/* Styling the select buttons (removed gradient) */
+.selectors select {
+    background-color: #32746D; /* Background color matching your theme */
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 5px; /* Add rounded corners */
+    cursor: pointer;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 columns for each day of the week */
+    grid-gap: 5px;
+    height: 400px; /* Fixed height to maintain size on hover */
+    overflow: hidden; /* Prevent overflow if necessary */
+}
+
+.calendar-day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px; /* Reduced padding for shorter tiles */
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    height: 70px; /* Adjusted height for shorter tiles */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.calendar-day:hover {
+    background-color: #9EC5AB; /* Add hover effect without resizing */
+}
+
+.popup {
+    background-color: #104F55;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px; /* Space between title and popup */
+    z-index: 10;
+    text-align: center; /* Center the text in the popup */
+}
