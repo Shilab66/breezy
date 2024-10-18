@@ -1,4 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Quicksand:wght@300;400;600&display=swap');
+@font-face {
+  font-family: 'Quicksand';
+  src: url('/fonts/Quicksand/static/Quicksand-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+}
 
 * {
   margin: 0;
@@ -16,7 +24,6 @@ body, html, #root {
 }
 
 h1, h2 {
-  font-weight: 200;
   font-family: 'Quicksand', sans-serif;
 }
 
