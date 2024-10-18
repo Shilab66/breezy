@@ -3,12 +3,12 @@ import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  apiKey: "AIzaSyD0L_BLNvWx75eDoUgEyrxpS74CtV-Qh80",
+  authDomain: "breezy-8c7dc.firebaseapp.com",
+  projectId: "breezy-8c7dc",
+  storageBucket: "breezy-8c7dc.appspot.com",
+  messagingSenderId: "292996673635",
+  appId: "1:292996673635:web:0fe10d8f3bfd72e505c856",
 };
 
 const app = initializeApp(firebaseConfig);
