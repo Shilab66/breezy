@@ -44,7 +44,7 @@ const HealthQuestionnaire = () => {
     else if (totalScore >= 4) diagnosis = 'COPD';
 
     setResult(`Your profile suggests: ${diagnosis}`);
-    //await storeTinkerManResult(diagnosis);
+    await storeTinkerManResult(diagnosis);
 
     // Redirect to the next page (e.g., '/results' or a different route)
     router.push('/goldSlides');  // Replace '/results' with your actual route

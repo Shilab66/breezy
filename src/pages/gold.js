@@ -50,21 +50,28 @@ const CoughSound = {
   
 
 const storeCOPDResult = async (result, group) => {
+
+  console.log("start store")
   const user = auth.currentUser;
 
   if (user) {
+    console.log("yes user")
     try {
       const userId = user.uid;
       const userDocRef = doc(db, 'users', userId);
       const date = new Date();
       const formattedDate = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')}`;
-      const copdResultRef = doc(collection(userDocRef, 'copdResults'), formattedDate);
+      const copdResultsRef = collection(userDocRef, 'copdResults');
+      const copdResultRef = doc(copdResultsRef, formattedDate);
 
+      console.log("starts set")
       await setDoc(copdResultRef, {
         result,           
         group,            
         date: formattedDate, 
       });
+
+      console.log("end set")
     } catch (error) {
       console.error('Error writing to Firestore:', error);
     }
@@ -100,7 +107,7 @@ const COPDQuestionnaire = () => {
     setHospitalVisits(Math.max(0, parseInt(e.target.value, 10) || 0));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const copdData = {
@@ -116,10 +123,14 @@ const COPDQuestionnaire = () => {
       hospitalVisits,  
     };
 
+    console.log("log test")
+
     const group = determineCOPDGroup(coughSound, symptoms, CATScore, exacerbations, hospitalVisits);
 
     setResult(`The patient falls into: ${group}`);
-    storeCOPDResult(copdData, group);
+    await storeCOPDResult(copdData, group);
+
+    console.log("done await")
 
     router.push('/results');
   };
