@@ -13,6 +13,16 @@ const Dashboard = () => {
     router.push('/tinkermanSlide'); // Navigate to the slideshow page
   };
 
+  // Function to handle button click
+  const handleNewGoldGroup = () => {
+    router.push('/gold'); // Navigate to the slideshow page
+  };
+
+  // Function to handle button click
+  const handleAction = () => {
+    router.push('/actionPlan'); // Navigate to the slideshow page
+  };
+
   return (
     <div className="dashboard-container">
       {/* Calendar section with rounded box background */}
@@ -54,8 +64,14 @@ const Dashboard = () => {
         >
           New Cough Upload + Diagnosis Questionnaire
         </button>
-        <button className="bottom-button">Gold Group Assessment</button>
-        <button className="bottom-button">Action Plan</button>
+        <button 
+          className="bottom-button"
+          onClick={handleNewGoldGroup}
+        >Gold Group Assessment</button>
+        <button 
+        className="bottom-button"
+        onClick={handleAction}
+        >Action Plan</button>
       </div>
     </div>
   );
