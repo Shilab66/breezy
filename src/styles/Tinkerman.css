@@ -1,0 +1,132 @@
+body {
+  background-color: #01200F; /* Dark color for the whole page */
+  font-family: 'Poppins', sans-serif;
+  color: #9EC5AB;
+}
+
+.questionnaire-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #104F55; /* Slightly lighter dark color for form */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+  text-align: center;
+  color: #9EC5AB; /* Light greenish font */
+  font-size: 1.5em;
+}
+
+.questionnaire-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #9EC5AB;
+}
+
+.submit-button {
+  padding: 10px;
+  border: 2px solid #9EC5AB;
+  border-radius: 8px;
+  background-color: #01200F; /* No gradient, solid dark color */
+  color: #9EC5AB;
+  font-family: 'Poppins', sans-serif;
+}
+
+.select-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 400px; /* Adjust as necessary */
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #01200F; /* Dark background */
+  border: 2px solid #9EC5AB; /* Light green border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 10px 40px 10px 20px; /* Add padding to the left, space on the right for the arrow */
+  color: #9EC5AB; /* Light green text */
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+/* Custom down arrow */
+.select-wrapper::after {
+  content: '▼'; /* Unicode for down arrow */
+  position: absolute;
+  top: 50%;
+  right: 15px; /* Adjust to center the arrow */
+  transform: translateY(-50%);
+  color: #9EC5AB; /* Arrow color matching the theme */
+  pointer-events: none; /* Prevent interaction with the arrow */
+}
+
+/* Remove bevel effect from options */
+select option {
+  background-color: #01200F; /* Dark option background */
+  color: #9EC5AB; /* Light green option text */
+}
+
+/* Focus effect */
+select:focus {
+  outline: none;
+  border-color: #32746D; /* Border color on focus */
+}
+
+/* Custom dropdown arrow (optional) */
+select::after {
+  content: '\25BC'; /* Down arrow Unicode */
+  color: #9EC5AB;
+  padding-left: 10px;
+}
+
+.submit-button {
+  padding-top: 10px;
+  cursor: pointer;
+  background-color: transparent; /* Hollow button */
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #32746D; /* Light greenish when hovered */
+}
+
+.result-container {
+  margin-top: 20px;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.styled-select, .styled-input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #01200F; /* Dark background */
+  border: 2px solid #9EC5AB; /* Light green border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 10px;
+  color: #9EC5AB; /* Light green text */
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.result-container {
+  text-align: center;
+  margin-top: 20px;
+  color: #9EC5AB; /* Light green text */
+}

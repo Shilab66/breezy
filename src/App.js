@@ -5,8 +5,9 @@ import Hero from '../components/Hero';
 import Features from '../components/Features';
 import Testimonials from '../components/Testimonials';
 import Footer from '../components/Footer';
-import Login from '../components/Login'; // Import the Login component
-import Dashboard from '../components/Dashboard'; // Import the Dashboard component (you'll need to create this)
+import Login from '../components/Login'; 
+import Dashboard from '../components/Dashboard'; 
+import TinkermanSlide from '../components/TinkermanSlide'; 
 import '../styles/App.css';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
 
           {/* Route for dashboard page */}
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/tinkermanSlide" element={<TinkermanSlide />} /> 
         </Routes>
       </div>
     </Router>

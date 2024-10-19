@@ -1,0 +1,115 @@
+/* General container styling */
+.slideshow-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #011502; /* Dark background */
+  }
+  
+  /* Main slideshow section */
+  .slideshow {
+    width: 60%;
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+    color: #9EC5AB; /* Light text */
+    font-family: 'Quicksand', sans-serif; /* Use previous fonts */
+    border: 6px solid #32746D; /* Thicker medium green outline */
+    background-color: transparent;
+  }
+  
+  /* Header with highlight behind it */
+  .slideshow-header {
+    font-size: 2rem;
+    color: #9EC5AB;
+    padding: 10px;
+    background-color: rgba(50, 116, 109, 0.2); /* Semi-transparent highlight behind title */
+    border-radius: 10px;
+  }
+  
+  /* Slide content */
+  .slide {
+    padding: 20px;
+  }
+  
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .text {
+    text-align: left;
+    font-size: 1.2rem;
+  }
+  
+  /* Button container */
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  /* Buttons */
+  .signup-btn, .login-btn {
+    width: 45%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .signup-btn {
+    background-color: transparent;
+    color: #9EC5AB;
+    border: 2px solid #9EC5AB; /* Match login page styles */
+  }
+  
+  .signup-btn:hover {
+    background-color: #9EC5AB;
+    color: #01200F;
+  }
+  
+  .login-btn {
+    background-color: #32746D; /* Match login page styles */
+    color: #fff;
+  }
+  
+  .login-btn:hover {
+    background-color: #9EC5AB;
+    color: #011502;
+  }
+  
+  /* Error message styling (if needed) */
+  .error {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: -10px;
+  }
+  
+  /* Back button styling (if needed) */
+  .back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: transparent;
+    border: none;
+    color: #9EC5AB;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    align-items: center;
+    transition: text-decoration 0.3s ease, color 0.3s ease;
+  }
+  
+  .back-button:hover {
+    color: #9EC5AB; /* Keep the color the same on hover */
+    text-decoration: underline;
+    text-decoration-color: #9EC5AB;
+    transition: text-decoration 0.5s ease-in-out;
+  }
+  

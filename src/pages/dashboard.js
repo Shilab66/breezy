@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
+import { useRouter } from 'next/router'; // Use Next.js router
 import Calendar from '../components/Calendar';
 import "../styles/Dashboard.css";
 
 const Dashboard = () => {
   const [hoveredDay, setHoveredDay] = useState(null);
   const [popupInfo, setPopupInfo] = useState(null);
+  const router = useRouter(); // Hook for navigation in Next.js
+
+  // Function to handle button click
+  const handleNewUploadClick = () => {
+    router.push('/tinkermanSlide'); // Navigate to the slideshow page
+  };
 
   return (
     <div className="dashboard-container">
@@ -41,7 +48,12 @@ const Dashboard = () => {
 
       {/* Three buttons at the bottom */}
       <div className="buttons-container">
-        <button className="bottom-button">New Cough Upload + Diagnosis Questionnaire</button>
+        <button 
+          className="bottom-button" 
+          onClick={handleNewUploadClick} // Handle click to navigate to slideshow
+        >
+          New Cough Upload + Diagnosis Questionnaire
+        </button>
         <button className="bottom-button">Gold Group Assessment</button>
         <button className="bottom-button">Action Plan</button>
       </div>

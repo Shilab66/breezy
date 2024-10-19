@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase';
+import { useRouter } from 'next/router'; // Import useRouter
 import '../styles/Signup.css'; // Import the corresponding CSS
 
 export default function SignUp() {
@@ -11,6 +12,7 @@ export default function SignUp() {
   const [lastName, setLastName] = useState('');
   const [username, setUsername] = useState('');
   const [error, setError] = useState(null);
+  const router = useRouter(); // Initialize useRouter
 
   const handleSignUp = async (e) => {
     e.preventDefault();
@@ -21,7 +23,7 @@ export default function SignUp() {
 
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      alert('User created successfully!');
+      router.push('/tinkermanSlide'); // Redirect to tinkermanSlide
     } catch (err) {
       setError(err.message);
     }
