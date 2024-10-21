@@ -43,11 +43,7 @@ const Dashboard = () => {
             <div className="popup">
               <h4>Day {hoveredDay} Info</h4>
               {Object.keys(popupInfo).length > 0 ? (
-                Object.entries(popupInfo).map(([trait, data]) => (
-                  <div key={trait}>
-                    <p><strong>{trait}:</strong> {data.label} (Points: {data.points})</p>
-                  </div>
-                ))
+                <p dangerouslySetInnerHTML={{ __html: popupInfo.replace(/\n/g, '<br />') }} />
               ) : (
                 <p>No data available for this day</p>
               )}

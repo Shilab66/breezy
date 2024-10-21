@@ -50,12 +50,9 @@ const CoughSound = {
   
 
 const storeCOPDResult = async (result, group) => {
-
-  console.log("start store")
   const user = auth.currentUser;
 
   if (user) {
-    console.log("yes user")
     try {
       const userId = user.uid;
       const userDocRef = doc(db, 'users', userId);
@@ -64,14 +61,12 @@ const storeCOPDResult = async (result, group) => {
       const copdResultsRef = collection(userDocRef, 'copdResults');
       const copdResultRef = doc(copdResultsRef, formattedDate);
 
-      console.log("starts set")
       await setDoc(copdResultRef, {
         result,           
         group,            
         date: formattedDate, 
       });
 
-      console.log("end set")
     } catch (error) {
       console.error('Error writing to Firestore:', error);
     }
@@ -79,8 +74,6 @@ const storeCOPDResult = async (result, group) => {
     console.error('No authenticated user found');
   }
 };
-
-// Existing CoughSound, Symptoms, and COPDGroup definitions...
 
 const COPDQuestionnaire = () => {
   const [coughSound, setCoughSound] = useState(CoughSound.NORMAL);
