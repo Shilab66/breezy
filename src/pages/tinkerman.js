@@ -43,7 +43,6 @@ const HealthQuestionnaire = () => {
     if (totalScore >= 10) diagnosis = 'Asthma-COPD Overlap Syndrome (ACOS)';
     else if (totalScore >= 4) diagnosis = 'COPD';
 
-    setResult(`Your profile suggests: ${diagnosis}`);
     await storeTinkerManResult(diagnosis);
 
     // Redirect to the next page (e.g., '/results' or a different route)
@@ -52,16 +51,16 @@ const HealthQuestionnaire = () => {
 
   return (
     <div className="questionnaire-container">
-      <h2>Health Questionnaire</h2>
+      <h2>Tinkerman Questionaire</h2>
       <form className="questionnaire-form" onSubmit={handleSubmit}>
         
         {/* Age of Onset */}
         <div>
           <label>Age of Onset:</label>
           <select value={ageOnset} onChange={(e) => setAgeOnset(parseInt(e.target.value))}>
-            <option value={0}>Neither (Healthy)</option>
-            <option value={1}>Middle Age or Older (COPD)</option>
-            <option value={2}>Childhood or Young Adult (Asthma)</option>
+            <option value={0}>Neither</option>
+            <option value={1}>Middle Age or Older</option>
+            <option value={2}>Childhood or Young Adult</option>
           </select>
         </div>
 
@@ -69,8 +68,8 @@ const HealthQuestionnaire = () => {
         <div>
           <label>Smoking History:</label>
           <select value={smokingHistory} onChange={(e) => setSmokingHistory(parseInt(e.target.value))}>
-            <option value={0}>No Significant Smoking History (Healthy/Asthma)</option>
-            <option value={1}>Significant Smoking History (COPD)</option>
+            <option value={0}>No Significant Smoking History</option>
+            <option value={1}>Significant Smoking History</option>
           </select>
         </div>
 
@@ -78,8 +77,8 @@ const HealthQuestionnaire = () => {
         <div>
           <label>Family History:</label>
           <select value={familyHistory} onChange={(e) => setFamilyHistory(parseInt(e.target.value))}>
-            <option value={0}>No (Healthy/COPD)</option>
-            <option value={2}>Yes (Asthma)</option>
+            <option value={0}>No </option>
+            <option value={2}>Yes </option>
           </select>
         </div>
 
@@ -87,9 +86,9 @@ const HealthQuestionnaire = () => {
         <div>
           <label>Cough:</label>
           <select value={cough} onChange={(e) => setCough(parseInt(e.target.value))}>
-            <option value={0}>None or Rarely (Healthy)</option>
-            <option value={1}>Persistent and Productive (COPD)</option>
-            <option value={2}>Intermittent and Worse at Night/Early Morning (Asthma)</option>
+            <option value={0}>None or Rarely</option>
+            <option value={1}>Persistent and Productive </option>
+            <option value={2}>Intermittent and Worse at Night/Early Morning </option>
           </select>
         </div>
 
@@ -97,9 +96,9 @@ const HealthQuestionnaire = () => {
         <div>
           <label>Shortness of Breath:</label>
           <select value={shortnessBreath} onChange={(e) => setShortnessBreath(parseInt(e.target.value))}>
-            <option value={0}>None or Mild (Healthy)</option>
-            <option value={1}>Progressive, Related to Activity Levels (COPD)</option>
-            <option value={2}>Episodic, Triggered by Specific Stimuli (Asthma)</option>
+            <option value={0}>None or Mild</option>
+            <option value={1}>Progressive, Related to Activity Levels</option>
+            <option value={2}>Episodic, Triggered by Specific Stimuli</option>
           </select>
         </div>
 
@@ -107,9 +106,9 @@ const HealthQuestionnaire = () => {
         <div>
           <label>Wheezing:</label>
           <select value={wheezing} onChange={(e) => setWheezing(parseInt(e.target.value))}>
-            <option value={0}>None or Rarely (Healthy)</option>
-            <option value={1}>Less Common or Not Responsive to Inhalers (COPD)</option>
-            <option value={2}>Common, Improved with Inhalers (Asthma)</option>
+            <option value={0}>None or Rarely</option>
+            <option value={1}>Less Common or Not Responsive to Inhalers</option>
+            <option value={2}>Common, Improved with Inhalers</option>
           </select>
         </div>
 
@@ -117,9 +116,9 @@ const HealthQuestionnaire = () => {
         <div>
           <label>Sputum Production:</label>
           <select value={sputumProduction} onChange={(e) => setSputumProduction(parseInt(e.target.value))}>
-            <option value={0}>None or Rarely (Healthy)</option>
-            <option value={1}>Regular and Productive (COPD)</option>
-            <option value={2}>Less Frequent (Asthma)</option>
+            <option value={0}>None or Rarely </option>
+            <option value={1}>Regular and Productive</option>
+            <option value={2}>Less Frequent</option>
           </select>
         </div>
 
@@ -127,9 +126,9 @@ const HealthQuestionnaire = () => {
         <div>
           <label>Symptom Variation:</label>
           <select value={symptomVariation} onChange={(e) => setSymptomVariation(parseInt(e.target.value))}>
-            <option value={0}>Stable or No Symptoms (Healthy)</option>
-            <option value={1}>Less Variation, Progressive Symptoms (COPD)</option>
-            <option value={2}>Significant Variation Over Time (Asthma)</option>
+            <option value={0}>Stable or No Symptoms</option>
+            <option value={1}>Less Variation, Progressive Symptoms</option>
+            <option value={2}>Significant Variation Over Time </option>
           </select>
         </div>
 

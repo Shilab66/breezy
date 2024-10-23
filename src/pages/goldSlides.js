@@ -5,18 +5,18 @@ import '../styles/Slideshow.css'; // Ensure this file exists and update styles
 const slides = [
   {
     id: 1,
-    instruction: 'Step 1: GOLD',
-    description: 'More text about what to do in step 1',
+    instruction: 'COPD: Medication',
+    description: 'Proper management of prescribed medications is also critical. Adhering to your medication regimen, including the use of inhalers and other treatments, helps control symptoms and prevent exacerbations. Regular consultations with your healthcare provider are important to ensure that your medications are effective and to make any necessary adjustments.',
   },
   {
     id: 2,
-    instruction: 'Step 2: GOLD 2',
-    description: 'More text about what to do in step 2',
+    instruction: 'Asthma: Managment Strategies',
+    description: 'Self-management strategies, particularly personalized action plans, are also crucial. These plans provide tailored guidelines for symptom monitoring and medication adjustments. For instance, patients with personalized plans that detail when to escalate medication or seek medical help have experienced a 20-30% reduction in hospitalizations and a 15% decrease in emergency visits. Tools such as symptom diaries or digital apps for tracking health status further support patients in managing their condition effectively. Studies have shown that patients using such tracking tools have reduced emergency visits by 15%, underscoring the benefit of continuous self-monitoring.',
   },
   {
     id: 3,
-    instruction: 'Step 3: Gold 3',
-    description: 'More text about what to do in step 3',
+    instruction: 'ACOS: Short-Acting Beta Agonist (SABA)',
+    description: 'One common option for quick relief is a B2 Agonist, which is a type of Short-Acting Beta Agonist (SABA) that will provide quick relief for ACOS conditions. Get in touch with your physician/pulmonologist to ask more about specific medications. One common example is albuterol, which is used to treat breathing problems. Another type of medication is a Long-Acting Beta Agonist (LABA), which provides relief for longer. An example of this is formoterol, but you should also get in touch with your physician/pulmonologist to ask more about specific medications.',
   },
 ];
 
@@ -41,7 +41,7 @@ function TinkermanSlide() {
   return (
     <div className="slideshow-container">
       <div className="slideshow">
-        <h2 className="slideshow-header">Directions</h2>
+        <h2 className="slideshow-header">Tinkerman + Cough Sound Results</h2>
         <div key={slides[currentSlide].id} className="slide">
           <div className="content">
             <div className="text">

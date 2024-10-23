@@ -1,0 +1,85 @@
+/* Center the container on the page */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    background-color: #01200F; /* Dark background color */
+    margin: 0; /* Remove default margin */
+    font-family: 'Poppins', sans-serif; /* Apply font globally */
+}
+
+.audio-player-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px; /* Increased padding */
+    background-color: #104F55; /* Use a color from your palette */
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 500px;
+}
+
+.audio-player-title {
+    font-size: 2rem; /* Larger title font size */
+    color: white; /* Title color */
+    margin-bottom: 20px; /* Space below title */
+    text-align: center; /* Center title text */
+}
+
+input[type="file"] {
+    display: none; /* Hide the default file input */
+}
+
+.upload-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #32746D; /* Button color */
+    border: none;
+    border-radius: 25px; /* Rounded button */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 20px; /* Space between button and audio player */
+}
+
+.upload-button:hover {
+    background-color: #2a5e55; /* Darker shade on hover */
+}
+
+.audio-player {
+    width: 100%; /* Make the audio player full width */
+    border-radius: 10px;
+    margin: 20px 0; /* Add spacing above and below */
+    background-color: #9EC5AB; /* Use a background color for the audio player */
+    border: none; /* Remove default border */
+}
+
+audio {
+    width: 100%; /* Full width */
+    border-radius: 10px;
+    outline: none; /* Remove outline */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #104F55; /* Your desired button color */
+    border: none;
+    border-radius: 25px; /* Rounded button */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0c3e43; /* Darker shade on hover */
+}
+
+p {
+    font-size: 18px;
+    color: #fff; /* Light color for contrast */
+    margin-top: 15px; /* Add space above the prediction text */
+    text-align: center; /* Center the text */
+}

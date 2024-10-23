@@ -5,8 +5,8 @@ import '../styles/Slideshow.css'; // Ensure this file exists and update styles
 const slides = [
   {
     id: 1,
-    instruction: 'Step 1: Insert Instruction',
-    description: 'More text about what to do in step 1',
+    instruction: 'According to the cough sound analysis and Tinkeman Questionaire',
+    description: 'Its likley that you have COPD. Continue to the next slide to learn about next step and further narrow down an action plan.',
   },
   {
     id: 2,

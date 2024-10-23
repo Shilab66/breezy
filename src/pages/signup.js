@@ -23,7 +23,7 @@ export default function SignUp() {
 
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      router.push('/tinkermanSlide'); // Redirect to tinkermanSlide
+      router.push('/audio');
     } catch (err) {
       setError(err.message);
     }

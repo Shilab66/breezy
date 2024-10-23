@@ -21,7 +21,7 @@ const ResultsPage = () => {
           <div className="content">
             <div className="text">
               <h3>Congratulations!</h3>
-              <p>Your results have been calculated. You can take further actions based on your results.</p>
+              <p>Your results have been calculated. You have been classified as Group D.</p>
             </div>
           </div>
           <div className="button-container">

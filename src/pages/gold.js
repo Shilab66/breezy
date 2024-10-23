@@ -120,7 +120,6 @@ const COPDQuestionnaire = () => {
 
     const group = determineCOPDGroup(coughSound, symptoms, CATScore, exacerbations, hospitalVisits);
 
-    setResult(`The patient falls into: ${group}`);
     await storeCOPDResult(copdData, group);
 
     console.log("done await")
@@ -132,14 +131,6 @@ const COPDQuestionnaire = () => {
     <div className="questionnaire-container">
       <h2>COPD Health Questionnaire</h2>
       <form className="questionnaire-form" onSubmit={handleSubmit}>
-        <div>
-          <label>Cough Sound:</label>
-          <select value={coughSound} onChange={(e) => setCoughSound(e.target.value)} className="styled-select">
-            {Object.values(CoughSound).map((sound) => (
-              <option key={sound} value={sound}>{sound}</option>
-            ))}
-          </select>
-        </div>
 
         <div>
           <label>Symptoms:</label>

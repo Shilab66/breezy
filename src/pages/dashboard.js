@@ -10,7 +10,7 @@ const Dashboard = () => {
 
   // Function to handle button click
   const handleNewUploadClick = () => {
-    router.push('/tinkermanSlide'); // Navigate to the slideshow page
+    router.push('/audio'); // Navigate to the slideshow page
   };
 
   // Function to handle button click
