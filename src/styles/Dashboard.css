@@ -17,9 +17,16 @@
 }
 
 .calendar-container-with-bg {
-    background-color: #32746D; /* Calendar background color */
-    border-radius: 15px; /* Rounded corners */
-    padding: 20px;
+  width: 100%;
+  max-width: 600px; /* You can adjust this to the appropriate size */
+  margin: 0 auto;
+  position: relative; /* Keep it positioned relative to avoid shifting */
+}
+
+
+.calendar-container-with-bg:hover {
+  margin: 0 auto; /* Ensure hover doesn't affect the margin */
+  padding: 0; /* Ensure no padding changes on hover */
 }
 
 /* Styling for the group title */
@@ -57,13 +64,14 @@
     background-color: #32746D;
 }
 
+/* Pop-up positioning */
 .popup {
-    background-color: #104F55;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 10px; /* Space between title and popup */
-    z-index: 10;
-    text-align: center; /* Center the text in the popup */
-    width: 250px; /* Fixed width for the pop-up */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  padding: 10px;
+  z-index: 100;
+  width: 300px; /* Adjust width so it doesn't affect calendar size */
 }
