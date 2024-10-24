@@ -30,7 +30,7 @@
     display: grid;
     grid-template-columns: repeat(7, 1fr); /* 7 columns for each day of the week */
     grid-gap: 5px;
-    height: 400px; /* Fixed height to maintain size on hover */
+    height: 200px; /* Fixed height to maintain size on hover */
     overflow: hidden; /* Prevent overflow if necessary */
 }
 
