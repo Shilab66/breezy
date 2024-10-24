@@ -1,12 +1,16 @@
+/* Import Poppins and Nunito from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Poppins:wght@400;700&display=swap');
+
+/* Dashboard container styling */
 .dashboard-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     padding: 20px;
-    font-family: Arial, sans-serif;
-    background-color: #011502; /* Dark background color that matches the theme */
-    color: white; /* Ensures that text stands out against the darker background */
+    font-family: 'Nunito', sans-serif; /* Changed to Nunito */
+    background-color: #011502;
+    color: white;
 }
 
 /* Calendar and group title are side by side */
@@ -18,15 +22,9 @@
 
 .calendar-container-with-bg {
   width: 100%;
-  max-width: 600px; /* You can adjust this to the appropriate size */
+  max-width: 600px;
   margin: 0 auto;
-  position: relative; /* Keep it positioned relative to avoid shifting */
-}
-
-
-.calendar-container-with-bg:hover {
-  margin: 0 auto; /* Ensure hover doesn't affect the margin */
-  padding: 0; /* Ensure no padding changes on hover */
+  position: relative;
 }
 
 /* Styling for the group title */
@@ -35,7 +33,8 @@
 }
 
 .group-title h2, .group-title h3 {
-    color: #9EC5AB; /* Adjust group title color to fit the new background */
+    color: #9EC5AB;
+    font-family: 'Poppins', sans-serif; /* Changed to Poppins for titles */
 }
 
 /* Bottom buttons styling */
@@ -48,10 +47,11 @@
 }
 
 .bottom-button {
-    background-color: #104F55; /* Button background color */
+    background-color: #104F55;
     color: white;
     font-size: 18px;
-    padding: 20px 40px; /* Taller buttons */
+    font-family: 'Poppins', sans-serif; /* Changed to Poppins for buttons */
+    padding: 20px 40px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -73,5 +73,6 @@
   border: 1px solid #ccc;
   padding: 10px;
   z-index: 100;
-  width: 300px; /* Adjust width so it doesn't affect calendar size */
+  width: 300px;
+  font-family: 'Nunito', sans-serif; /* Changed to Nunito for pop-up */
 }
