@@ -44,6 +44,16 @@
   font-size: 1.2rem;
 }
 
+/* Styling for links in the slide text */
+.text a {
+  color: #9EC5AB; /* Light green link color */
+  text-decoration: none; /* Remove default underline */
+}
+
+.text a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
 /* Controls for next/previous */
 .controls {
   margin-top: 20px;

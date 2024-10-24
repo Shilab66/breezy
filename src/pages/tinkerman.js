@@ -45,8 +45,24 @@ const HealthQuestionnaire = () => {
 
     await storeTinkerManResult(diagnosis);
 
-    // Redirect to the next page (e.g., '/results' or a different route)
-    router.push('/goldSlides');  // Replace '/results' with your actual route
+    if(diagnosis == "Healthy"){
+      const user = auth.currentUser;
+      // Write result to Firebase
+      if (user) {
+          const userId = user.uid; // Replace with actual user ID logic
+          const userDocRef = doc(db, 'users', userId);
+          await setDoc(userDocRef, {
+              diagnosis: "Healthy",
+              timestamp: new Date().toISOString(),
+          }, { merge: true });
+      } else{
+          console.log('No authenticated user found');
+      }
+
+      router.push('/results');
+    } else{
+      router.push('/goldSlides');
+    }
   };
 
   return (

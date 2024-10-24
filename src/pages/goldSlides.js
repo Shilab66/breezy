@@ -5,19 +5,24 @@ import '../styles/Slideshow.css'; // Ensure this file exists and update styles
 const slides = [
   {
     id: 1,
-    instruction: 'COPD: Medication',
-    description: 'Proper management of prescribed medications is also critical. Adhering to your medication regimen, including the use of inhalers and other treatments, helps control symptoms and prevent exacerbations. Regular consultations with your healthcare provider are important to ensure that your medications are effective and to make any necessary adjustments.',
+    instruction: "COPD Detected",
+    description: "Based on the Tinker Man analysis and cough sound, COPD has been detected."
   },
   {
     id: 2,
-    instruction: 'Asthma: Managment Strategies',
-    description: 'Self-management strategies, particularly personalized action plans, are also crucial. These plans provide tailored guidelines for symptom monitoring and medication adjustments. For instance, patients with personalized plans that detail when to escalate medication or seek medical help have experienced a 20-30% reduction in hospitalizations and a 15% decrease in emergency visits. Tools such as symptom diaries or digital apps for tracking health status further support patients in managing their condition effectively. Studies have shown that patients using such tracking tools have reduced emergency visits by 15%, underscoring the benefit of continuous self-monitoring.',
+    instruction: "Introduction to the GOLD Group Assessment",
+    description: "You will now be asked to take this COPD prognosis questionnaire known as the GOLD Group Assessment. This questionnaire differentiates the severity of COPD patients based on their number of hospital visits, number of exacerbations, and severity of symptoms."
   },
   {
     id: 3,
-    instruction: 'ACOS: Short-Acting Beta Agonist (SABA)',
-    description: 'One common option for quick relief is a B2 Agonist, which is a type of Short-Acting Beta Agonist (SABA) that will provide quick relief for ACOS conditions. Get in touch with your physician/pulmonologist to ask more about specific medications. One common example is albuterol, which is used to treat breathing problems. Another type of medication is a Long-Acting Beta Agonist (LABA), which provides relief for longer. An example of this is formoterol, but you should also get in touch with your physician/pulmonologist to ask more about specific medications.',
-  },
+    instruction: "Understanding the GOLD Groups",
+    description: (
+      <>
+        Our GOLD groups assessment will separate you into 4 GOLD groups ranging from A-D, where each group category represents the level of concern with A being the least severe and D being the most severe group. If you would like to learn more about how the GOLD Group Assessment works and what it represents, please visit the
+        <a href="https://goldcopd.org/wp-content/uploads/2024/02/POCKET-GUIDE-GOLD-2024-ver-1.2-11Jan2024_WMV.pdf" target="_blank" rel="noopener noreferrer"> 2024 GOLD Pocket Guide.</a>.
+      </>
+    )
+  }
 ];
 
 function TinkermanSlide() {
@@ -46,7 +51,9 @@ function TinkermanSlide() {
           <div className="content">
             <div className="text">
               <h3>{slides[currentSlide].instruction}</h3>
-              <p>{slides[currentSlide].description}</p>
+              <p>{typeof slides[currentSlide].description === 'string' 
+                  ? slides[currentSlide].description 
+                  : slides[currentSlide].description}</p>
             </div>
           </div>
           <div className="controls">

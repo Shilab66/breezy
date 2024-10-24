@@ -3,12 +3,6 @@ import { doc, collection, setDoc } from 'firebase/firestore';
 import { auth, db } from '../firebase.js';
 import { useRouter } from 'next/router';
 import "../styles/Tinkerman.css"; // Importing the CSS for consistent styling
-
-
-const CoughSound = {
-    NORMAL: 'Normal',
-    COPD: 'COPD',
-  };
   
   const Symptoms = {
     NONE: { value: 0, label: 'None' },
@@ -28,10 +22,8 @@ const CoughSound = {
   };
   
 
-  function determineCOPDGroup(coughSound, symptoms, CATScore, exacerbations, hospitalVisits) {
-    if (coughSound === CoughSound.NORMAL) {
-      return COPDGroup.NO_COPD;
-    } else if (CATScore + symptoms.value <= 11 && exacerbations <= 1 && hospitalVisits === 0) {
+  function determineCOPDGroup(symptoms, CATScore, exacerbations, hospitalVisits) {
+    if (CATScore + symptoms.value <= 11 && exacerbations <= 1 && hospitalVisits === 0) {
       return COPDGroup.GROUP_A;
     } else if (CATScore + symptoms.value >= 12 && exacerbations <= 1 && hospitalVisits === 0) {
       return COPDGroup.GROUP_B;
@@ -67,6 +59,15 @@ const storeCOPDResult = async (result, group) => {
         date: formattedDate, 
       });
 
+      console.log(group)
+
+      if(group != "No COPD"){
+        await setDoc(userDocRef, {
+          diagnosis: group,
+          timestamp: new Date().toISOString(),
+      }, { merge: true });
+      }
+
     } catch (error) {
       console.error('Error writing to Firestore:', error);
     }
@@ -76,7 +77,6 @@ const storeCOPDResult = async (result, group) => {
 };
 
 const COPDQuestionnaire = () => {
-  const [coughSound, setCoughSound] = useState(CoughSound.NORMAL);
   const [symptoms, setSymptoms] = useState(Symptoms.NONE);
   const [questionScores, setQuestionScores] = useState(Array(8).fill(0));
   const [exacerbations, setExacerbations] = useState(0);
@@ -118,7 +118,7 @@ const COPDQuestionnaire = () => {
 
     console.log("log test")
 
-    const group = determineCOPDGroup(coughSound, symptoms, CATScore, exacerbations, hospitalVisits);
+    const group = determineCOPDGroup(symptoms, CATScore, exacerbations, hospitalVisits);
 
     await storeCOPDResult(copdData, group);
 

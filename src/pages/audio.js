@@ -2,6 +2,8 @@ import { useState, useRef, useEffect } from 'react';
 import * as tf from '@tensorflow/tfjs';
 import '../styles/Audio.css'; // Import the CSS file
 import { useRouter } from 'next/router';
+import { doc, setDoc } from 'firebase/firestore';
+import { auth, db } from '../firebase.js';
 
 const AudioPlayer = () => {
     const [audioData, setAudioData] = useState(null);
@@ -66,15 +68,36 @@ const AudioPlayer = () => {
             const predictionValue = result[0]; // Assuming the result is a single value
             
             // Determine the condition based on the prediction value
+            let detectedCondition = '';
             if (predictionValue < 0.5) {
-                console.log("Healthy")
+                detectedCondition = "Healthy";
                 setPrediction("Healthy");
             } else {
-                console.log("COPD")
+                detectedCondition = "COPD";
                 setPrediction("COPD");
             }
+
+            const user = auth.currentUser;
+
+            // Write result to Firebase
+            if (user) {
+                const userId = user.uid; // Replace with actual user ID logic
+                const userDocRef = doc(db, 'users', userId);
+                await setDoc(userDocRef, {
+                    diagnosis: detectedCondition,
+                    timestamp: new Date().toISOString(),
+                }, { merge: true });
+            } else{
+                console.log('No authenticated user found');
+            }
+
+            // Redirect based on prediction
+            if (detectedCondition === "COPD") {
+                router.push('/tinkermanSlide'); // Redirect to Tinkerman (gold.js)
+            } else {
+                router.push('/results'); // Redirect to results page
+            }
         }
-        router.push('/tinkermanSlide');
     };
 
     useEffect(() => {
@@ -89,7 +112,7 @@ const AudioPlayer = () => {
 
     return (
         <div className="audio-player-container">
-            <h1 className="audio-player-title">Audio Analysis</h1> {/* Added Title */}
+            <h1 className="audio-player-title">Audio Analysis</h1>
             <label htmlFor="audio-upload" className="upload-button">Upload Audio</label>
             <input
                 type="file"
@@ -106,7 +129,6 @@ const AudioPlayer = () => {
             <button onClick={handlePredict} disabled={!audioData}>
                 Predict
             </button>
-            {prediction && <p>{prediction}</p>} {/* Display the prediction result */}
         </div>
     );
 };

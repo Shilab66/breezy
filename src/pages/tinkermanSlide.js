@@ -5,18 +5,18 @@ import '../styles/Slideshow.css'; // Ensure this file exists and update styles
 const slides = [
   {
     id: 1,
-    instruction: 'According to the cough sound analysis and Tinkeman Questionaire',
-    description: 'Its likley that you have COPD. Continue to the next slide to learn about next step and further narrow down an action plan.',
+    instruction: 'Obstruction Detected',
+    description: 'An obstruction was detected based on the analysis. Please proceed to learn more.',
   },
   {
     id: 2,
-    instruction: 'Step 2: Insert Instruction',
-    description: 'More text about what to do in step 2',
+    instruction: 'Diagnosis Questionnaire',
+    description: 'In the next page, you will be asked to take a diagnosis questionnaire that will ask about your patient history and symptom characteristics. Based on each question, you will be asked to select choices through drop-down menu options.',
   },
   {
     id: 3,
-    instruction: 'Step 3: Insert Instruction',
-    description: 'More text about what to do in step 3',
+    instruction: 'Cough and Questionnaire Results',
+    description: 'Through the cough sound and diagnosis questionnaire it will be determined whether you are healthy, have COPD, or other obstructive-asthma related diseases. For further information on the diagnosis questionnaire used and how it works, please visit this study: https://research.rug.nl/en/publications/symptom-based-questionnaire-for-differentiating-copd-and-asthma',
   },
 ];
 
@@ -41,7 +41,7 @@ function TinkermanSlide() {
   return (
     <div className="slideshow-container">
       <div className="slideshow">
-        <h2 className="slideshow-header">Directions</h2>
+        <h2 className="slideshow-header">Tinkerman + Cough Sound Results</h2>
         <div key={slides[currentSlide].id} className="slide">
           <div className="content">
             <div className="text">
