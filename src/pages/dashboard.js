@@ -25,7 +25,7 @@ const Dashboard = () => {
 
           if (docSnap.exists()) {
             const data = docSnap.data();
-            setUserGroup(data.group || 'Unknown Group'); // Set the group or fallback to 'Unknown Group'
+            setUserGroup(data.diagnosis || ''); // Set the group or fallback to 'Unknown Group'
           } else {
             console.log('No such document!');
           }
