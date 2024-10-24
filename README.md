@@ -5,7 +5,7 @@
 
 This app helps users evaluate and monitor their COPD condition through two primary tools: a symptom-based questionnaire and an audio analysis of cough sounds. The app provides personalized insights based on user inputs, such as symptom severity and sound patterns, and suggests whether the user might be experiencing COPD or related conditions.
 
-## App Video Walkthrough
+## [App Video Walkthrough]([https://link-url-here.org](https://img.youtube.com/vi/fyhJ6fZ59z0/0.jpg)](https://www.youtube.com/watch?v=fyhJ6fZ59z0)
 [![Video Watlkthrough](https://img.youtube.com/vi/fyhJ6fZ59z0/0.jpg)](https://www.youtube.com/watch?v=fyhJ6fZ59z0)
 
 
